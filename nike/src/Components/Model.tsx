@@ -18,7 +18,9 @@ scene.traverse((child) => {
         adjustCamera={false}
         environment="city"
       > */}
-        <Float speed={2} floatIntensity={2}>
+        <Float speed={4} floatIntensity={2}
+        floatingRange={[0, 1]}
+        >
         <primitive object={scene} rotation={[-1,1.1,1]} position={[0,-2,0]} scale={3} />
         </Float>
   

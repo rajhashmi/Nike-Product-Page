@@ -1,12 +1,14 @@
-import { Environment, OrbitControls } from '@react-three/drei';
+import { Environment,  OrbitControls } from '@react-three/drei';
 import './App.css';
 import Scene from './Components/Lights';
 import Model from './Components/Model';
+import Obstacle from './Components/Obstacle';
+import Html from './Components/Html';
 
 function App() {
   return (
     <>
-      <OrbitControls />
+      {/* <OrbitControls /> */}
       
       <Scene/>
       <Environment preset="city" />
@@ -14,11 +16,13 @@ function App() {
               position={[0, -3.2, 0]}
               receiveShadow
               rotation={[-Math.PI / 2, 0, 0]}
-              scale={[60, 14, 5]}
+              scale={[60, 20, 10]}
               >
               <planeGeometry />
-              <meshStandardMaterial color="white"     />
+              <meshStandardMaterial color="#FFB6B8"   />
             </mesh>
+            {/* <Obstacle/> */}
+            <Html/>
               <Model/>
     </>
   );
