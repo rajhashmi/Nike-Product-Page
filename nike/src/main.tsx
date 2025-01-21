@@ -19,9 +19,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
       <App />
     </Canvas>
    <div className='hero'>
-    <h1>
-      hello
-    </h1>
+   
    </div>
    
   </>
