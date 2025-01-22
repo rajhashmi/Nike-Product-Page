@@ -11,4 +11,5 @@ html, body , #root{
 .hero{
     position: relative;
     z-index: 1000;
+    height: 200vh;
 }

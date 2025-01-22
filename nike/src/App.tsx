@@ -5,7 +5,20 @@ import Model from './Components/Model';
 import Obstacle from './Components/Obstacle';
 import Html from './Components/Html';
 
+
+// import { gsap } from "gsap";
+// import { gsap } from 'gsap/gsap-core';
+
+// gsap.registerPlugin(ScrollSmoother) 
+
 function App() {
+
+  // ScrollSmoother.create({
+  //   smooth: 1,
+  //   effects: true,
+  // })
+
+  
   return (
     <>
       {/* <OrbitControls /> */}

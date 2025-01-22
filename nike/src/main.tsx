@@ -3,9 +3,11 @@ import App from './App.tsx';
 import { Canvas } from '@react-three/fiber';
 
 
+
+
 ReactDOM.createRoot(document.getElementById('root')!).render(
+
   <>
-  
     <Canvas
     className='canvas'
       gl={{ preserveDrawingBuffer: true, antialias: true }}
@@ -18,8 +20,8 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     >
       <App />
     </Canvas>
-   <div className='hero'>
-   
+   <div className='hero'
+   >
    </div>
    
   </>

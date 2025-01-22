@@ -1,13 +1,40 @@
 import { Float, Stage, useGLTF } from '@react-three/drei'
-import { Suspense } from 'react'
+import { useFrame } from '@react-three/fiber';
+import { Suspense, useEffect, useRef } from 'react'
 
- function Model() {
+
+function Model() {
 const {scene} = useGLTF("/nike.glb");
+const yCamera = useRef(0); 
+const targetY = useRef(0);  
+
 scene.traverse((child) => {
-    if (child.isMesh) {
-      child.castShadow = true;  
-    }
-  });
+  if (child.isMesh) {
+    child.castShadow = true;
+  }
+});
+
+useEffect(() => {
+  const handleScroll = () => {
+    const scrollY = window.scrollY;  
+    targetY.current = scrollY / 100;  
+  };
+
+  window.addEventListener("scroll", handleScroll);
+
+  return () => {
+    window.removeEventListener("scroll", handleScroll);
+  };
+}, []);
+
+useFrame((state, delta) => {
+  yCamera.current += (targetY.current - yCamera.current) * 0.1;
+
+  state.camera.position.y = -yCamera.current;
+
+
+});
+
   return (
     <Suspense fallback={null}>
         {/* <Stage
