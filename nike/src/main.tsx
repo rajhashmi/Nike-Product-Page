@@ -3,8 +3,6 @@ import App from './App.tsx';
 import { Canvas } from '@react-three/fiber';
 
 
-
-
 ReactDOM.createRoot(document.getElementById('root')!).render(
 
   <>
