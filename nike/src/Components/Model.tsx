@@ -33,6 +33,11 @@ function Model() {
         }
       });
 
+      gsap.to(modelGroup.current.position, {
+        scrollTrigger : modelGroup.current.position,
+        x:-1
+      })
+
  
     }
   }, [scene]);
