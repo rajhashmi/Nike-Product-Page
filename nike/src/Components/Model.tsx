@@ -12,10 +12,12 @@ function Model() {
   const isModelLoad = useRef(false);
   const yCamera = useRef(0);
   const targetY = useRef(0);
+  const planeRef = useRef();
 
   useEffect(() => {
     scene.traverse((child) => {
       if (child.isMesh) {
+        // child.material.wireframe = true;
         child.castShadow = true;
       }
     });
@@ -27,19 +29,48 @@ function Model() {
       gsap.to(modelGroup.current.position, {
         y: 0, 
         ease: "none",
-        duration: 2.5, 
+        duration: 1.5, 
         onComplete: () => {
           isModelLoad.current = true;
         }
       });
 
       gsap.to(modelGroup.current.position, {
-        scrollTrigger : modelGroup.current.position,
-        x:-1
-      })
-
- 
+        x: 6, 
+        // z: 1.5,
+        scrollTrigger: {
+          trigger: ".hero", 
+          start: "top top", 
+          end: "bottom top", 
+          scrub: true, 
+        },
+      });
+      gsap.to(modelGroup.current.rotation, {
+        x: -3, 
+        z:3,
+        scrollTrigger: {
+          trigger: ".hero", 
+          start: "top top", 
+          end: "bottom top", 
+          scrub: true, 
+        },
+      });
+      if(planeRef.current){
+        console.log(planeRef.current.material.opacity);
+        
+        gsap.to(planeRef.current.material, {
+          scrollTrigger: {
+            trigger: ".hero",
+            start: "top top", 
+            end: "bottom 0%",  
+            scrub: true,    
+          },
+          opacity: 0, 
+        });
     }
+
+    }
+      
   }, [scene]);
 
   useFrame((state, delta) => {
@@ -72,6 +103,7 @@ function Model() {
         </Float>
       </group>
       <mesh
+      ref={planeRef}
         position={[0, -3.2, 0]}
         receiveShadow
         rotation={[-Math.PI / 2, 0, 0]}
