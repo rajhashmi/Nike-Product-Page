@@ -55,23 +55,7 @@ function Html() {
     >
       AIR JORDAN
     </Text>
-    <Text
-
-  castShadow
-  font="./bebas-neue-v9-latin-regular.woff"
-  position={[-15, -1.5, 5]}
-  letterSpacing={0.05}
-  scale={[2, 2, 2]}
-  rotation={[0, Math.PI, 0]}
-  color="transparent"
-  anchorX="center"
-  anchorY="middle"
-  outlineWidth={0.02}  
-  outlineColor="#C6373C" 
  
->
-  Mid Fire Red
-</Text>
 </group>
     
 
