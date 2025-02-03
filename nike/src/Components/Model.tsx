@@ -37,7 +37,6 @@ function Model() {
 
       gsap.to(modelGroup.current.position, {
         x: 6, 
-        // z: 1.5,
         scrollTrigger: {
           trigger: ".hero", 
           start: "top top", 
