@@ -11,5 +11,8 @@ html, body , #root{
 .hero{
     position: relative;
     z-index: 1000;
-    height: 300vh;
+    height: 100vh;
+}
+.Section-One{
+    height: 100vh;
 }

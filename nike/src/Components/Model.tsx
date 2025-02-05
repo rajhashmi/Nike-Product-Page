@@ -27,7 +27,7 @@ function Model() {
       modelGroup.current.rotation.set(-1, 1.1, 1);
 
       gsap.to(modelGroup.current.position, {
-        y: 0, 
+        y: -1, 
         ease: "none",
         duration: 1.5, 
         onComplete: () => {
@@ -37,6 +37,7 @@ function Model() {
 
       gsap.to(modelGroup.current.position, {
         x: 6, 
+        z:-2,
         scrollTrigger: {
           trigger: ".hero", 
           start: "top top", 
@@ -44,16 +45,16 @@ function Model() {
           scrub: true, 
         },
       });
-      gsap.to(modelGroup.current.rotation, {
-        x: -3, 
-        z:3,
-        scrollTrigger: {
-          trigger: ".hero", 
-          start: "top top", 
-          end: "bottom top", 
-          scrub: true, 
-        },
-      });
+      // gsap.to(modelGroup.current.rotation, {
+      //   x: -3, 
+      //   z:3,
+      //   scrollTrigger: {
+      //     trigger: ".hero", 
+      //     start: "top top", 
+      //     end: "bottom top", 
+      //     scrub: true, 
+      //   },
+      // });
       if(planeRef.current){
         console.log(planeRef.current.material.opacity);
         
@@ -77,7 +78,7 @@ function Model() {
 
     state.camera.position.y = -yCamera.current;
     if (modelGroup.current && isModelLoad.current) {
-      modelGroup.current.position.y += (state.camera.position.y - modelGroup.current.position.y) * 0.1;
+      modelGroup.current.position.y += (state.camera.position.y - modelGroup.current.position.y) * 0.5;
     }
   });
 

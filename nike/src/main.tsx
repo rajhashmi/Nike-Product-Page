@@ -19,7 +19,11 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     </Canvas>
    <div className='hero'
    >
+
    </div>
+    <div className='Section-One' >
+      This is Section 2
+    </div>
    
   </>
 );
