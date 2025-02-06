@@ -24,6 +24,9 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     <div className='Section-One' >
       This is Section 2
     </div>
+    <div className='Section-One' >
+      This is Section 3
+    </div>
    
   </>
 );

@@ -14,7 +14,7 @@ function App() {
     <>
       
       <Scene/>
-      {/* <Environment preset="city" /> */}
+      <Environment preset="city" />
 
             <Html/>
           <Model />
